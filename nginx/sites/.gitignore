@@ -1,2 +1,4 @@
 *.conf
 !default.conf
+!alterbooks.conf
+!admin.alterbooks.conf
