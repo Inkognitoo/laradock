@@ -61,7 +61,12 @@ ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisord.conf"]
 #
 # If you need to modify this image, feel free to do it right here.
 #
-    # -- Your awesome modifications go here -- #
+
+RUN apk add python2-dev \
+    && wget https://bootstrap.pypa.io/get-pip.py \
+    && python get-pip.py \
+    && rm get-pip.py \
+    && python -m pip install "cchardet==2.1.1"
 
 #
 #--------------------------------------------------------------------------
