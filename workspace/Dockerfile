@@ -884,3 +884,13 @@ RUN apt-get clean && \
 
 # Set default work directory
 WORKDIR /var/www
+
+#
+#--------------------------------------------------------------------------
+# Optional Software's Installation
+#--------------------------------------------------------------------------
+#
+
+RUN if [ ${INSTALL_PYTHON} = true ]; then \
+    python -m pip install "cchardet==2.1.1" \
+;fi
